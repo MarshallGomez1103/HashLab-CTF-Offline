@@ -1,0 +1,6 @@
+Wordlist sources for this offline package
+
+rockyou.txt: SecLists Passwords/Leaked-Databases/rockyou.txt.tar.gz, 14,344,391 physical lines. Source: https://github.com/danielmiessler/SecLists
+xato_top10m.txt: SecLists Passwords/Common-Credentials/xato-net-10-million-passwords.txt, 5,189,454 physical lines in the local source copy. Source: https://github.com/danielmiessler/SecLists
+seeds.txt: locally generated from public challenge titles, dates, artist/team/place names, and the short unlocked hint; no full song lyrics.
+SecLists project license: MIT; see SecLists-LICENSE.txt.

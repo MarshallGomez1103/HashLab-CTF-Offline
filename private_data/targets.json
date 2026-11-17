@@ -1,0 +1,19 @@
+{
+  "targets": [
+    {
+      "name": "Gorillaz",
+      "hash": "e57c7fc0f827a7f12fc32a60ca268631abff7f14c11875dacdd442b47027b5df",
+      "source": "hashes/Gorillaz.txt"
+    },
+    {
+      "name": "Morat",
+      "hash": "a5c416a2179efc2ac18b0c999df9d5449d86f12aca39a84fdcbb7c7750d38244",
+      "source": "hashes/Morat.txt"
+    },
+    {
+      "name": "Final Copa Sudamericana",
+      "hash": "9a7d5a7475e3d90f1d8253d370bb53a2c9db0f21355ba986212e7b293c7c4891",
+      "source": "hashes/Final_Copa_Sudamericana.txt"
+    }
+  ]
+}

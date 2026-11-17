@@ -6,8 +6,9 @@ __pycache__/
 *.rec
 *.out
 state/
-private_data/
-tools/
+private_data/wordlists/rockyou.txt
+private_data/wordlists/rockyou.tmp
 dist/
 *.zip
+!tools/python/python313.zip
 *.7z

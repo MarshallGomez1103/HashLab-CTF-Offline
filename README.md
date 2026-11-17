@@ -4,7 +4,7 @@ HashLab is a local password recovery lab for hashes that you own or are explicit
 
 ## Offline bundle
 
-Download the complete ZIP from the public repository's **Releases** page. The green **Code → Download ZIP** contains only source code and cannot run offline. The Release ZIP contains:
+Download the repository with **Code → Download ZIP** or use the complete ZIP on the **Releases** page. Both include:
 
 - `private_data/targets.json`, matching `private_data/hashes/*.txt` files, and screenshots;
 - `private_data/wordlists/seeds.txt`, RockYou, and the Xato list;
@@ -14,7 +14,7 @@ Download the complete ZIP from the public repository's **Releases** page. The gr
 On each authorized Windows 64-bit computer:
 
 1. Extract the entire ZIP to a writable folder. Running from inside the ZIP will not preserve state.
-2. Double-click `START.cmd`. The launcher uses the bundled Python executable and native Windows controls; it needs no installation, account, or PowerShell script policy change.
+2. Double-click `START.cmd`. For a Code ZIP, the first launch reconstructs RockYou from two included parts; allow a few seconds and enough writable disk space. The launcher then uses bundled Python and native Windows controls, with no installation, account, or PowerShell script policy change.
 3. Check the three displayed hashes against the supplied challenge files.
 4. Select a distinct computer number from 1 to 20. Every computer uses the same ZIP and the same total of 20, even if fewer computers are available.
 5. Select Hashcat (GPU), confirm, and start. John (CPU, dictionaries) is an explicit fallback. It does not run the GPU mask stages.
@@ -32,6 +32,6 @@ Hashcat requires a compatible GPU driver and compute runtime. No package can sup
 
 ## Development
 
-Run `python -m unittest discover -s tests -v` to test the coordinator. `python cluster_core.py verify --targets targets.example.json` validates the public example. The public source repository keeps `private_data/`, `tools/`, and `state/` outside Git; the complete Release ZIP includes the first two.
+Run `python -m unittest discover -s tests -v` to test the coordinator. `python cluster_core.py verify --targets targets.example.json` validates the public example. The repository includes `private_data/` and `tools/` for an offline Code ZIP; generated `state/` and the reconstructed RockYou file remain outside Git.
 
 Hashcat is distributed under the MIT license; John the Ripper Jumbo has its own license files; Python includes its license. The offline bundle retains the upstream license and documentation files inside each vendor directory.
