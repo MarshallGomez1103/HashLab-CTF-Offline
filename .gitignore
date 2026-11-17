@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.log
+*.potfile
+*.restore
+*.rec
+*.out
+state/
+private_data/
+tools/
+dist/
+*.zip
+*.7z

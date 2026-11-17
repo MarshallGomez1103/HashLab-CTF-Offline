@@ -1,0 +1,167 @@
+$2 $0 $2 $4
+$2 $0 $2 $5
+$2 $0 $2 $6
+:
+c
+c $2 $0 $2 $4
+c $2 $0 $2 $5
+c $2 $0 $2 $6
+l
+l $0
+l $0 c
+l $0 l
+l $0 u
+l $1
+l $1 c
+l $1 l
+l $1 u
+l $2
+l $2 c
+l $2 l
+l $2 u
+l $3
+l $3 c
+l $3 l
+l $3 u
+l $4
+l $4 c
+l $4 l
+l $4 u
+l $5
+l $5 c
+l $5 l
+l $5 u
+l $6
+l $6 c
+l $6 l
+l $6 u
+l $7
+l $7 c
+l $7 l
+l $7 u
+l $8
+l $8 c
+l $8 l
+l $8 u
+l $9
+l $9 c
+l $9 l
+l $9 u
+l ^0
+l ^0 c
+l ^0 l
+l ^0 u
+l ^1
+l ^1 c
+l ^1 l
+l ^1 u
+l ^2
+l ^2 c
+l ^2 l
+l ^2 u
+l ^3
+l ^3 c
+l ^3 l
+l ^3 u
+l ^4
+l ^4 c
+l ^4 l
+l ^4 u
+l ^5
+l ^5 c
+l ^5 l
+l ^5 u
+l ^6
+l ^6 c
+l ^6 l
+l ^6 u
+l ^7
+l ^7 c
+l ^7 l
+l ^7 u
+l ^8
+l ^8 c
+l ^8 l
+l ^8 u
+l ^9
+l ^9 c
+l ^9 l
+l ^9 u
+l c o11 o60 T2
+l sa@
+l sa@ c
+l sa@ l
+l sa@ se3 si1 so0 ss5 st7
+l sa@ se3 si1 so0 ss5 st7 c
+l sa@ se3 si1 so0 ss5 st7 l
+l sa@ se3 si1 so0 ss5 st7 u
+l sa@ u
+l se3
+l se3 c
+l se3 l
+l se3 u
+l si1
+l si1 c
+l si1 l
+l si1 so0
+l si1 so0  $0
+l si1 so0  $1
+l si1 so0  $2
+l si1 so0  $3
+l si1 so0  $4
+l si1 so0  $5
+l si1 so0  $6
+l si1 so0  $7
+l si1 so0  $8
+l si1 so0  $9
+l si1 so0  c $0
+l si1 so0  c $1
+l si1 so0  c $2
+l si1 so0  c $3
+l si1 so0  c $4
+l si1 so0  c $5
+l si1 so0  c $6
+l si1 so0  c $7
+l si1 so0  c $8
+l si1 so0  c $9
+l si1 so0  l $0
+l si1 so0  l $1
+l si1 so0  l $2
+l si1 so0  l $3
+l si1 so0  l $4
+l si1 so0  l $5
+l si1 so0  l $6
+l si1 so0  l $7
+l si1 so0  l $8
+l si1 so0  l $9
+l si1 so0  u $0
+l si1 so0  u $1
+l si1 so0  u $2
+l si1 so0  u $3
+l si1 so0  u $4
+l si1 so0  u $5
+l si1 so0  u $6
+l si1 so0  u $7
+l si1 so0  u $8
+l si1 so0  u $9
+l si1 so0 c
+l si1 so0 l
+l si1 so0 u
+l si1 so0 u $2 $0 $2 $4
+l si1 so0 u $2 $0 $2 $5
+l si1 so0 u $2 $0 $2 $6
+l si1 u
+l so0
+l so0 c
+l so0 l
+l so0 u
+l ss5
+l ss5 c
+l ss5 l
+l ss5 u
+l st7
+l st7 c
+l st7 l
+l st7 u
+r
+u

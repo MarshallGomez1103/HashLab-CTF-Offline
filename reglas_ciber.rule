@@ -1,0 +1,31 @@
+:
+c
+c $!
+c $#
+c $@
+l
+l c o11 o60 T2
+l sa4
+l sa4 se3 si1 so0 ss5 st7
+l sa4 se3 si1 so0 ss5 st7 c
+l sa4 se3 si1 so0 ss5 st7 u
+l se3
+l se3 sa4
+l si1
+l si1 sa4
+l si1 se3
+l si1 se3 sa4
+l si1 se3 sa4 $!
+l si1 se3 sa4 $#
+l si1 se3 sa4 $@
+l si1 se3 sa4 c
+l si1 se3 sa4 so0
+l si1 se3 sa4 so0 c
+l si1 se3 sa4 so0 ss5
+l si1 se3 sa4 so0 ss5 st7
+l si1 se3 sa4 so0 u
+l si1 se3 sa4 u
+l so0
+l ss5
+l st7
+u
