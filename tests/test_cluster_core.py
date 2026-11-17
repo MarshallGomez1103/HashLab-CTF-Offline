@@ -39,6 +39,7 @@ class ClusterCoreTests(unittest.TestCase):
         )
         self.assertIn("--skip=5", command)
         self.assertIn("--limit=7", command)
+        self.assertFalse(any(arg.startswith("--restore-timer") for arg in command))
         self.assertEqual(command[-2:], ["hashes.txt", "?d?d?d?d"])
 
     def test_mask_stage_uses_hashcat_keyspace_for_this_computer(self):
@@ -122,6 +123,7 @@ class ClusterCoreTests(unittest.TestCase):
         self.assertIn("--session=stage_0001", command)
         self.assertIn("--potfile-path=node-01/hashcat.potfile", command)
         self.assertIn("--outfile=node-01/stage_0001.out", command)
+        self.assertFalse(any(arg.startswith("--restore-timer") for arg in command))
         self.assertEqual(command[-2:], ["-r", "best66.rule"])
 
     def test_recovered_password_must_reproduce_target_before_flag(self):

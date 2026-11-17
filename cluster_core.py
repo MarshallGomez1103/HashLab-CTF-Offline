@@ -93,7 +93,7 @@ def build_hashcat_command(
     command = [
         str(executable), "-m", "1400", "-a", "0", "-w", "1",
         "--hwmon-temp-abort=85", "--status", "--status-timer=30",
-        "--restore-timer=60", f"--session={stage}",
+        f"--session={stage}",
         f"--potfile-path={node_dir / 'hashcat.potfile'}",
         f"--outfile={node_dir / (stage + '.out')}",
         "--outfile-format=1,2", str(hashes_file), str(shard),
@@ -136,7 +136,7 @@ def build_mask_command(
     return [
         str(executable), "-m", "1400", "-a", "3", "-w", "1",
         "--hwmon-temp-abort=85", "--status", "--status-timer=30",
-        "--restore-timer=60", f"--session={stage}",
+        f"--session={stage}",
         f"--potfile-path={node_dir / 'hashcat.potfile'}",
         f"--outfile={node_dir / (stage + '.out')}",
         "--outfile-format=1,2", f"--skip={skip}", f"--limit={limit}",
