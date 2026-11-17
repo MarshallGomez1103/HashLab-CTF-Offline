@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import gzip
 import hashlib
 import json
 import re
@@ -10,6 +11,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
+from typing import Callable
 
 
 HEX_64 = re.compile(r"[0-9a-fA-F]{64}\Z")
@@ -67,14 +69,18 @@ def load_targets(path: Path) -> list[dict[str, str]]:
     return targets
 
 
-def shard_wordlist(source: Path, destination: Path, computer: int, total: int) -> int:
+def shard_wordlist(source: Path, destination: Path, computer: int, total: int,
+                   progress: Callable[[int], None] | None = None) -> int:
     """Assign each physical line to exactly one 1-based computer."""
     validate_assignment(computer, total)
     destination.parent.mkdir(parents=True, exist_ok=True)
     temporary = destination.with_suffix(destination.suffix + ".tmp")
     count = 0
-    with source.open("rb") as incoming, temporary.open("wb") as outgoing:
+    opener = gzip.open if source.suffix == ".gz" else Path.open
+    with opener(source, "rb") as incoming, temporary.open("wb") as outgoing:
         for index, line in enumerate(incoming):
+            if progress is not None and index and index % 50_000_000 == 0:
+                progress(index)
             if index % total == computer - 1:
                 outgoing.write(line)
                 count += 1
@@ -327,8 +333,10 @@ def run_plan(
         for word_index, wordlist in enumerate(wordlists, 1):
             shard = node_dir / f"wordlist_{word_index:02d}.txt"
             if not shard.exists():
-                count = shard_wordlist(wordlist, shard, computer, total)
-                log(f"Diccionario {word_index}/{len(wordlists)}: {count} líneas asignadas a este computador.")
+                log(f"Diccionario {word_index}/{len(wordlists)} ({wordlist.name}): preparando la sección de este computador.")
+                count = shard_wordlist(wordlist, shard, computer, total,
+                                       lambda lines: log(f"{wordlist.name}: {lines:,} líneas leídas."))
+                log(f"Diccionario {word_index}/{len(wordlists)} ({wordlist.name}): {count} líneas asignadas a este computador.")
             stage_rules = [None] + rules if engine == "hashcat" else [None]
             for rule_index, rule in enumerate(stage_rules):
                 stage = f"hashlab_{signature[:8]}_{engine}_c{computer:02d}_w{word_index:02d}_r{rule_index:02d}"

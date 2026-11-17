@@ -29,6 +29,7 @@ class LauncherLogicTests(unittest.TestCase):
             "private_data/wordlists/seeds.txt",
             "private_data/wordlists/rockyou.txt",
             "private_data/wordlists/xato_top10m.txt",
+            "private_data/wordlists/crackstation.txt.gz",
             "private_data/screenshots/Gorillaz.png",
             "private_data/screenshots/Morat.png",
             "private_data/screenshots/Final_Copa_Sudamericana.png",
@@ -48,8 +49,8 @@ class LauncherLogicTests(unittest.TestCase):
         self.assertEqual(gpu[0], str(self.root / "tools/python/python.exe"))
         self.assertIn("--computer", gpu)
         self.assertEqual(gpu[gpu.index("--computer") + 1], "7")
-        self.assertIn("--masks", gpu)
-        self.assertEqual(gpu.count("--wordlist"), 3)
+        self.assertNotIn("--masks", gpu)
+        self.assertEqual(gpu.count("--wordlist"), 4)
         self.assertEqual(gpu.count("--rule"), 2)
         cpu = build_command(self.root, 20, "john")
         self.assertNotIn("--masks", cpu)

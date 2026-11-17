@@ -3,4 +3,7 @@ Wordlist sources for this offline package
 rockyou.txt: SecLists Passwords/Leaked-Databases/rockyou.txt.tar.gz, 14,344,391 physical lines. Source: https://github.com/danielmiessler/SecLists
 xato_top10m.txt: SecLists Passwords/Common-Credentials/xato-net-10-million-passwords.txt, 5,189,454 physical lines in the local source copy. Source: https://github.com/danielmiessler/SecLists
 seeds.txt: locally generated from public challenge titles, dates, artist/team/place names, and the short unlocked hint; no full song lyrics.
+crackstation.txt.gz: CrackStation's full list, 1,493,677,782 words, 4,500,756,826 compressed bytes. Source: https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm
+CrackStation's published SHA-256 for the GZIP: a6dc17d27d0a34f57c989741acdd485b8aee45a6e9796daf8c9435370dc61612
+CrackStation wordlist license: Creative Commons Attribution-ShareAlike 3.0, https://creativecommons.org/licenses/by-sa/3.0/
 SecLists project license: MIT; see SecLists-LICENSE.txt.

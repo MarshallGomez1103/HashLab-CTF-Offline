@@ -16,6 +16,7 @@ WORDLISTS = (
     "private_data/wordlists/seeds.txt",
     "private_data/wordlists/rockyou.txt",
     "private_data/wordlists/xato_top10m.txt",
+    "private_data/wordlists/crackstation.txt.gz",
 )
 RULES = (
     "tools/hashcat-7.1.2/rules/best66.rule",
@@ -86,7 +87,7 @@ def build_command(root: Path, computer: int, engine: str) -> list[str]:
         "--engine", engine,
     ]
     if engine == "hashcat":
-        command.extend(("--hashcat", str(root / HASHCAT), "--masks"))
+        command.extend(("--hashcat", str(root / HASHCAT)))
     else:
         command.extend(("--john", str(root / JOHN)))
     for wordlist in WORDLISTS:
@@ -308,7 +309,7 @@ def run_windows_gui(root: Path) -> int:
                     WS_BORDER | ES_MULTILINE | ES_READONLY | WS_VSCROLL,
                     24, 88, 1020, 145, fixed=True,
                 )
-                control(hwnd, "STATIC", "3 hashes cotejados. Modo provisional: SHA-256 crudo.",
+                control(hwnd, "STATIC", "SHA-256 crudo provisional. Longitudes sugeridas, sin confirmar: Gorillaz 27; Morat 26; Copa 29.",
                         0, 24, 244, 1010, 25)
                 control(hwnd, "STATIC", "Este es el computador:", 0, 24, 287, 200, 27)
                 handles["node"] = control(

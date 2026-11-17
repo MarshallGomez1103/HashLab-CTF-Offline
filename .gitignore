@@ -8,6 +8,8 @@ __pycache__/
 state/
 private_data/wordlists/rockyou.txt
 private_data/wordlists/rockyou.tmp
+private_data/wordlists/crackstation.txt.gz
+private_data/wordlists/crackstation.txt.gz.tmp
 dist/
 *.zip
 !tools/python/python313.zip

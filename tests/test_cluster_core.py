@@ -1,4 +1,5 @@
 import hashlib
+import gzip
 import contextlib
 import io
 import json
@@ -78,6 +79,20 @@ class ClusterCoreTests(unittest.TestCase):
             words = [f"word-{i}\n".encode() for i in range(43)] + [b"duplicate\n"] * 2
             source = root / "words.txt"
             source.write_bytes(b"".join(words))
+            observed = []
+            for computer in range(1, 21):
+                shard = root / f"shard-{computer}.txt"
+                shard_wordlist(source, shard, computer, 20)
+                observed.extend(shard.read_bytes().splitlines(keepends=True))
+            self.assertEqual(Counter(observed), Counter(words))
+
+    def test_compressed_wordlist_shards_cover_every_line(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "words.txt.gz"
+            words = [f"long-password-{index}\n".encode() for index in range(43)]
+            with gzip.open(source, "wb") as output:
+                output.write(b"".join(words))
             observed = []
             for computer in range(1, 21):
                 shard = root / f"shard-{computer}.txt"

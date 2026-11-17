@@ -16,6 +16,15 @@ if not exist "%~dp0private_data\wordlists\rockyou.txt" (
   move /y "%~dp0private_data\wordlists\rockyou.tmp" "%~dp0private_data\wordlists\rockyou.txt" >nul
   if errorlevel 1 goto copy_failed
 )
+if not exist "%~dp0private_data\wordlists\crackstation.txt.gz" (
+  echo Preparando CrackStation. Esto puede tardar unos minutos...
+  "%~dp0tools\python\python.exe" "%~dp0prepare_wordlist.py"
+  if errorlevel 1 (
+    echo No se pudo preparar CrackStation. Extrae el ZIP completo a una carpeta con espacio libre.
+    pause
+    exit /b 1
+  )
+)
 "%~dp0tools\python\pythonw.exe" "%~dp0launcher_gui.py"
 exit /b %errorlevel%
 
